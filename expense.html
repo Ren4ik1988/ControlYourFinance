@@ -15,18 +15,18 @@
         <h1>
             Управление расходами
         </h1>
-        <form class="roboto-medium">
+        <form class="roboto-medium" id="form">
             <div>
                 <label for="amount">Cумма расхода:</label>
-                <input id="amount" name="amount" type="number" step=".01" value="" />
+                <input id="amount" name="amount" type="number" step=".01" value="" required />
             </div>
             <div>
                 <label for="expense_date">Дата расхода:</label>
-                <input id="expense_date" name="expense_date" type="date" value="" />
+                <input id="expense_date" name="expense_date" type="date" value="" required />
             </div>
             <div>
                 <label for="description">Описание расхода:</label>
-                <textarea id="description" name="description"></textarea>
+                <textarea id="description" name="description" rows="3"></textarea>
             </div>
             <input class="roboto-medium" type="submit" value="Сохранить" >
         </form>
@@ -34,9 +34,27 @@
 </body>
 <script>
     let tg = window.Telegram.WebApp;
-    tg.expand();
     tg.ready();
+    tg.expand();
+
+    function toDateInputValue(dateObject){
+        const local = new Date(dateObject);
+        local.setMinutes(dateObject.getMinutes() - dateObject.getTimezoneOffset());
+        return local.toJSON().slice(0,10);
+    }
+
+    document.getElementById('expense_date').value = toDateInputValue(new Date());
     
+    let form = document.getElementById('form');
+    form.addEventListener("submit", (el, event) => {
+
+        const data = new FormData(event.target);
+        const entries = Object.fromEntries(data.entries());
+        
+        tg.sendData(JSON.stringify(entries));
+
+        event.preventDefault();
+    });
     
 </script>
 </html>
