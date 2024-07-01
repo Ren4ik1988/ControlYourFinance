@@ -16,8 +16,8 @@ body {
 }
 
 form {
-    width: 200px;
     margin: 0 auto;
+    width: 200px;
 }
 
 h1 {
@@ -47,10 +47,11 @@ button:hover {
     background: var(--tg-theme-secondary-bg-color);
 }
 
-input, label {
+input, label, textarea {
     display:block;
     text-align: left;
     font-size: 20px;
+    width: 200px;
 }
 
 input {
