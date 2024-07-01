@@ -38,8 +38,8 @@ button, input[type=submit] {
     width: 200px;
     font-size: 20px;
     cursor: pointer;
-    text-align: center;
     transition: all 500ms ease;
+    text-align: center;
     color: var(var(--tg-theme-button-text-color));
     background: var(--tg-theme-button-color);
 }
@@ -52,12 +52,13 @@ input, label, textarea {
     display:block;
     text-align: left;
     font-size: 20px;
-    width: 300px;
+    width: 100%;
 }
 
 input {
     margin-top: 2px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .roboto-thin {
