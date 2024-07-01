@@ -63,6 +63,14 @@ input {
     width: 100%;
 }
 
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
 .roboto-thin {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
