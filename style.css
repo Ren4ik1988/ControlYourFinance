@@ -38,6 +38,7 @@ button, input[type=submit] {
     width: 200px;
     font-size: 20px;
     cursor: pointer;
+    text-align: center;
     transition: all 500ms ease;
     color: var(var(--tg-theme-button-text-color));
     background: var(--tg-theme-button-color);
