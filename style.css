@@ -15,6 +15,11 @@ body {
     text-align: center;
 }
 
+form {
+    width: 200px;
+    margin: 0 auto;
+}
+
 h1 {
     margin-top: 50px;
     margin-bottom: 10px;
@@ -25,10 +30,10 @@ p {
     margin: 0 auto;
 }
 
-button {
+button, input[type=submit] {
     border: 0;
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 40px;
     height: 60px;
     width: 200px;
     font-size: 20px;
@@ -40,6 +45,17 @@ button {
 
 button:hover {
     background: var(--tg-theme-secondary-bg-color);
+}
+
+input, label {
+    display:block;
+    text-align: left;
+    font-size: 20px;
+}
+
+input {
+    margin-top: 2px;
+    margin-bottom: 10px;
 }
 
 .roboto-thin {
