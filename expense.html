@@ -43,17 +43,17 @@
         return local.toJSON().slice(0,10);
     }
 
-    document.getElementById('expense_date').value = toDateInputValue(new Date());
-    
-    let form = document.getElementById('form');
-    form.addEventListener("submit", (el, event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("form").addEventListener("submit", function(e) {
+            
+            e.preventDefault() // Cancel the default action
+            const data = new FormData(e.target);
+            const entries = Object.fromEntries(data.entries());
 
-        const data = new FormData(event.target);
-        const entries = Object.fromEntries(data.entries());
-        
-        tg.sendData(JSON.stringify(entries));
+            tg.sendData(JSON.stringify(entries));
+        });
 
-        event.preventDefault();
+        document.getElementById('expense_date').value = toDateInputValue(new Date());
     });
     
 </script>
