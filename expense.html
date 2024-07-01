@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление расходами</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +18,7 @@
         <form class="roboto-medium">
             <div>
                 <label for="amount">Cумма расхода:</label>
-                <input id="amount" name="amount" type="number" value="" />
+                <input id="amount" name="amount" type="number" step=".01" value="" />
             </div>
             <div>
                 <label for="expense_date">Дата расхода:</label>
