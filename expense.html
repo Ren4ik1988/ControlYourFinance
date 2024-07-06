@@ -16,6 +16,21 @@
             Управление расходами
         </h1>
         <form class="roboto-medium" id="form">
+            <fieldset class="container">
+                <legend class="roboto-bold">Тип расхода</legend>
+                <label class="container">Регулярные расходы
+                    <input type="radio" checked="checked" name="expense_type">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container"> Периодические расходы
+                    <input type="radio" name="expense_type">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Разовые расходы
+                    <input type="radio" name="expense_type">
+                    <span class="checkmark"></span>
+                </label>
+            </fieldset>
             <div>
                 <label for="amount">Cумма расхода:</label>
                 <input id="amount" name="amount" type="number" step=".01" value="" required />
